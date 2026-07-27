@@ -8,35 +8,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
         body{font-family:'Sora',sans-serif;background:#fff;color:#121212;line-height:1.5}
-
         .w{max-width:1200px;margin:0 auto;padding:0 24px}
-        .fw{width:100%}
 
-        /* ——— TICKER ——— */
-        .ticker{background:#121212;color:#88847c;font-size:10px;padding:8px 0;overflow:hidden;white-space:nowrap;font-weight:400;letter-spacing:.3px}
-        .ticker-inner{display:inline-block;animation:tick 30s linear infinite}
+        .ticker{background:#121212;color:#88847c;font-size:10px;padding:8px 0;overflow:hidden;white-space:nowrap;font-weight:400;letter-spacing:.3px;font-family:'IBM Plex Mono',monospace}
+        .ticker-inner{display:inline-block;animation:tick 40s linear infinite}
         .ticker-inner span{margin:0 24px;color:#c0392b;font-weight:600}
         @keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-        /* ——— HEADER ——— */
         .hd{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:2px solid #121212}
         .hd-m{font-size:16px;font-weight:800;letter-spacing:-.3px;color:#121212}
         .hd-m small{font-size:9px;font-weight:400;color:#999;letter-spacing:1px;margin-left:4px}
-        .hd-r{display:flex;gap:20px;align-items:center}
-        .hd-r a{color:#666;text-decoration:none;font-size:12px;font-weight:500;transition:.2s;padding:6px 12px;border-radius:4px}
-        .hd-r a:hover{color:#121212;background:#f5f5f0}
-        .hd-r .p{color:#fff;background:#c0392b;padding:8px 18px;border-radius:30px;font-weight:600}
+        .hd-r{display:flex;gap:16px;align-items:center}
+        .hd-r a{color:#666;text-decoration:none;font-size:12px;font-weight:500;transition:.2s}
+        .hd-r a:hover{color:#121212}
+        .hd-r .p{color:#fff;background:#c0392b;padding:8px 20px;border-radius:30px;font-weight:600;font-size:13px}
 
-        /* ——— FLASH ——— */
-        .flash{display:grid;grid-template-columns:1fr 1fr;min-height:70vh;border-bottom:2px solid #121212}
-        .flash-l{display:flex;flex-direction:column;justify-content:center;padding:60px 40px}
-        .flash-t{font-size:clamp(42px,5vw,72px);font-weight:800;line-height:.95;letter-spacing:-2.5px;margin-bottom:16px}
+        .flash{display:grid;grid-template-columns:1fr 1.1fr;min-height:80vh;border-bottom:2px solid #121212}
+        .flash-l{display:flex;flex-direction:column;justify-content:center;padding:60px 48px 60px 0}
+        .flash-t{font-size:clamp(42px,5vw,72px);font-weight:800;line-height:.95;letter-spacing:-2.5px;margin-bottom:14px}
         .flash-t .r{color:#c0392b}
-        .flash-s{font-size:13px;color:#888;max-width:360px;line-height:1.7;margin-bottom:24px}
+        .flash-s{font-size:13px;color:#888;max-width:380px;line-height:1.7;margin-bottom:24px}
         .flash-b{display:flex;gap:8px;flex-wrap:wrap}
         .btn{display:inline-flex;align-items:center;gap:6px;padding:12px 24px;border-radius:30px;font-weight:600;font-size:12px;text-decoration:none;border:none;cursor:pointer;transition:.2s;font-family:'Sora',sans-serif}
         .btn-p{background:#c0392b;color:#fff}
@@ -44,66 +40,71 @@
         .btn-o{background:transparent;color:#121212;border:2px solid #121212}
         .btn-o:hover{background:#121212;color:#fff}
         .flash-r{background:#f5f5f0;display:flex;align-items:center;justify-content:center;padding:40px;position:relative;overflow:hidden}
-        .flash-r .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;max-width:360px}
-        .flash-r .gbox{padding:20px;border-bottom:2px solid #ddd}
-        .flash-r .gbox .gb-n{font-size:24px;font-weight:800;color:#121212;line-height:1}
-        .flash-r .gbox .gb-l{font-size:9px;color:#999;text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+        .flash-r .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;width:100%;max-width:420px}
+        .flash-r .gbox{background:#fff;border-radius:8px;padding:24px;box-shadow:0 1px 4px rgba(0,0,0,.04);transition:.2s;cursor:default}
+        .flash-r .gbox:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px)}
+        .flash-r .gbox .gb-i{width:32px;height:32px;background:#121212;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;margin-bottom:12px}
+        .flash-r .gbox .gb-n{font-size:15px;font-weight:700;color:#121212;line-height:1.2}
+        .flash-r .gbox .gb-l{font-size:11px;color:#999;margin-top:3px}
+        .flash-r .gbox .gb-m{font-family:'IBM Plex Mono',monospace;font-size:10px;color:#ddd;margin-top:8px;letter-spacing:-.2px}
 
-        /* ——— STRIP ——— */
-        .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
-        .strip>div{padding:48px 32px;border-right:1px solid #eee}
+        .strip{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:2px solid #121212}
+        .strip>div{padding:56px 40px;border-right:1px solid #eee;transition:.2s}
+        .strip>div:hover{background:#fafaf5}
         .strip>div:last-child{border:0}
-        .strip .st-n{font-size:10px;color:#c0392b;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px}
-        .strip h3{font-size:17px;font-weight:700;margin-bottom:6px;letter-spacing:-.3px}
-        .strip p{font-size:13px;color:#888;line-height:1.6}
+        .strip .st-n{font-size:10px;color:#c0392b;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
+        .strip h3{font-size:20px;font-weight:700;margin-bottom:8px;letter-spacing:-.4px}
+        .strip p{font-size:13px;color:#888;line-height:1.7;max-width:320px}
+        .strip .st-spec{font-family:'IBM Plex Mono',monospace;font-size:10px;color:#ccc;margin-top:12px;letter-spacing:-.2px}
 
-        /* ——— SHOWCASE ——— */
         .show{display:grid;grid-template-columns:1fr 1fr;border-bottom:2px solid #121212}
-        .show-vis{min-height:300px;background-size:cover;background-position:center;position:relative}
+        .show-vis{min-height:340px;background-size:cover;background-position:center;display:flex;flex-direction:column;justify-content:flex-end;position:relative}
         .show-vis .so{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.5),transparent 50%)}
-        .show-vis .sl{position:relative;z-index:1;align-self:flex-end;padding:20px;color:#fff;font-size:11px;font-weight:500;letter-spacing:.5px;display:flex;align-items:flex-end;height:100%}
-        .show-txt{display:flex;flex-direction:column;justify-content:center;padding:48px 40px}
-        .show-txt h2{font-size:clamp(20px,2.5vw,28px);font-weight:700;letter-spacing:-.8px;margin-bottom:10px}
-        .show-txt p{color:#888;font-size:13px;line-height:1.7;margin-bottom:10px}
-        .show-txt .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
-        .show-txt .tags span{font-size:10px;background:#f5f5f0;padding:5px 10px;border-radius:4px;color:#666;font-weight:500}
+        .show-vis .sl{position:relative;z-index:1;padding:24px;color:#fff;font-size:11px;font-weight:500;letter-spacing:.5px}
+        .show-txt{display:flex;flex-direction:column;justify-content:center;padding:56px 48px}
+        .show-txt .st-cat{font-size:10px;color:#c0392b;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+        .show-txt h2{font-size:clamp(22px,2.5vw,30px);font-weight:700;letter-spacing:-.8px;margin-bottom:10px}
+        .show-txt p{color:#888;font-size:13px;line-height:1.8;margin-bottom:10px}
+        .show-txt .tags{display:flex;flex-wrap:wrap;gap:6px}
+        .show-txt .tags span{font-size:10px;background:#f5f5f0;padding:5px 12px;border-radius:4px;color:#666;font-weight:500}
 
-        /* ——— INDUSTRIES ——— */
         .inds{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:2px solid #121212}
-        .inds>div{padding:40px 32px;border-right:1px solid #eee}
+        .inds>div{padding:48px 40px;border-right:1px solid #eee;transition:.2s}
         .inds>div:last-child{border:0}
-        .inds .in-n{font-size:40px;font-weight:800;color:#f0f0e8;line-height:1;margin-bottom:8px;letter-spacing:-2px}
-        .inds h4{font-size:14px;font-weight:600;margin-bottom:4px}
-        .inds p{font-size:12px;color:#888;line-height:1.6}
+        .inds>div:hover{background:#fafaf5}
+        .inds .in-n{font-size:48px;font-weight:800;color:#f0f0e8;line-height:1;margin-bottom:10px;letter-spacing:-2px}
+        .inds h4{font-size:15px;font-weight:700;margin-bottom:6px}
+        .inds p{font-size:13px;color:#888;line-height:1.7;max-width:340px}
 
-        /* ——— CTA STRIP ——— */
-        .cta-s{background:#121212;color:#fff;padding:48px 0}
+        .cta-s{background:#121212;color:#fff;padding:56px 0;border-bottom:2px solid #121212}
         .cta-s .w{display:flex;justify-content:space-between;align-items:center;gap:20px}
-        .cta-s h2{font-size:clamp(18px,2vw,26px);font-weight:700;letter-spacing:-.5px}
+        .cta-s h2{font-size:clamp(20px,2.5vw,30px);font-weight:700;letter-spacing:-.5px;margin-bottom:4px}
         .cta-s p{color:#88847c;font-size:13px}
-        .cta-s .r{display:flex;gap:24px}
+        .cta-s .r{display:flex;gap:32px}
         .cta-s .r div .l{font-size:9px;color:#666;text-transform:uppercase;letter-spacing:.8px;margin-bottom:2px}
         .cta-s .r div .v{font-size:14px;font-weight:600;color:#fff}
 
-        /* ——— FOOT ——— */
-        .ft{padding:20px 0;border-top:2px solid #121212}
+        .ft{padding:20px 0}
         .ft .w{display:flex;justify-content:space-between;align-items:center;font-size:10px;color:#999}
 
         @media(max-width:900px){
             .flash{grid-template-columns:1fr;min-height:auto}
-            .flash-l{padding:40px 24px}
+            .flash-l{padding:40px 0}
+            .flash-r{padding:32px;min-height:200px}
             .show{grid-template-columns:1fr}
             .strip{grid-template-columns:1fr}
             .strip>div{border:0;border-bottom:1px solid #eee}
             .inds{grid-template-columns:1fr}
             .inds>div{border:0;border-bottom:1px solid #eee}
             .cta-s .w{flex-direction:column;text-align:center}
-            .cta-s .r{justify-content:center}
+            .cta-s .r{justify-content:center;flex-wrap:wrap;gap:20px}
+            .show-txt{padding:32px 24px}
         }
         @media(max-width:600px){
             .hd-r a{display:none}
             .hd-r .p{display:inline-flex}
             .flash-r .grid{grid-template-columns:1fr}
+            .flash-t{font-size:32px}
         }
     </style>
 </head>
@@ -111,8 +112,8 @@
 
 <div class="ticker">
     <div class="ticker-inner">
-        <span>●</span> Industrial Pumps — Centrifugal · Submersible · Diaphragm <span>●</span> Diesel &amp; Gas Engines — 10 kW to 2 MW+ <span>●</span> Hydraulic Systems — Pumps · Motors · Valves · Cylinders <span>●</span> Filtration &amp; Cooling — Oil · Fuel · Coolant <span>●</span> Transmission Drives — Gearboxes · VSD · Couplings
-        <span>●</span> Industrial Pumps — Centrifugal · Submersible · Diaphragm <span>●</span> Diesel &amp; Gas Engines — 10 kW to 2 MW+ <span>●</span> Hydraulic Systems — Pumps · Motors · Valves · Cylinders <span>●</span> Filtration &amp; Cooling — Oil · Fuel · Coolant <span>●</span> Transmission Drives — Gearboxes · VSD · Couplings
+        <span>⏺</span> Centrifugal Pumps — 5,000 m³/h · 150 bar <span>⏺</span> Submersible Pumps — Stormwater · Sewage · Sludge <span>⏺</span> Diesel Engines — 10 kW to 2 MW · Tier 3/4 <span>⏺</span> Gas Engines — Biogas · Landfill · CNG <span>⏺</span> Hydraulic Pumps — Gear · Piston · Vane · Up to 450 bar <span>⏺</span> Hydraulic Motors — Orbital · Piston · Gear <span>⏺</span> Filtration — Oil · Fuel · Coolant
+        <span>⏺</span> Centrifugal Pumps — 5,000 m³/h · 150 bar <span>⏺</span> Submersible Pumps — Stormwater · Sewage · Sludge <span>⏺</span> Diesel Engines — 10 kW to 2 MW · Tier 3/4 <span>⏺</span> Gas Engines — Biogas · Landfill · CNG <span>⏺</span> Hydraulic Pumps — Gear · Piston · Vane · Up to 450 bar <span>⏺</span> Hydraulic Motors — Orbital · Piston · Gear <span>⏺</span> Filtration — Oil · Fuel · Coolant
     </div>
 </div>
 
@@ -136,10 +137,10 @@
     </div>
     <div class="flash-r">
         <div class="grid">
-            <div class="gbox"><div class="gb-n">Industrial</div><div class="gb-l">Pumps</div></div>
-            <div class="gbox"><div class="gb-n">Diesel &amp; Gas</div><div class="gb-l">Engines</div></div>
-            <div class="gbox"><div class="gb-n">Hydraulic</div><div class="gb-l">Transmission</div></div>
-            <div class="gbox"><div class="gb-n">Filtration</div><div class="gb-l">&amp; Cooling</div></div>
+            <div class="gbox"><div class="gb-i"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#fff" stroke-width="1.5"/><circle cx="8" cy="8" r="2.5" fill="#fff"/></svg></div><div class="gb-n">Centrifugal Pumps</div><div class="gb-l">Up to 5,000 m³/h · 150 bar</div><div class="gb-m">▸ end-suction · split-case · multistage</div></div>
+            <div class="gbox"><div class="gb-i"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="2" stroke="#fff" stroke-width="1.5"/><rect x="5" y="6" width="3" height="7" fill="#fff" opacity=".7"/><rect x="9" y="6" width="2" height="7" fill="#fff" opacity=".7"/></svg></div><div class="gb-n">Diesel &amp; Gas Engines</div><div class="gb-l">10 kW – 2 MW · Tier 3/4</div><div class="gb-m">▸ pump drives · generators · CHP</div></div>
+            <div class="gbox"><div class="gb-i"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="5" width="12" height="6" rx="2" stroke="#fff" stroke-width="1.5"/><circle cx="10" cy="8" r="1.5" fill="#fff"/><circle cx="5" cy="8" r="1.5" fill="#fff"/></svg></div><div class="gb-n">Hydraulic Systems</div><div class="gb-l">Up to 450 bar · Mobile &amp; Industrial</div><div class="gb-m">▸ pumps · motors · valves · cylinders</div></div>
+            <div class="gbox"><div class="gb-i"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12" stroke="#fff" stroke-width="1.5"/><circle cx="4" cy="8" r="2.5" fill="#fff"/><circle cx="12" cy="8" r="2.5" fill="#fff"/></svg></div><div class="gb-n">Transmission &amp; Drives</div><div class="gb-l">Gearboxes · VSD · Couplings</div><div class="gb-m">▸ helical · planetary · belt drives</div></div>
         </div>
     </div>
 </div>
@@ -148,41 +149,46 @@
     <div>
         <div class="st-n">Centrifugal</div>
         <h3>Pumps</h3>
-        <p>End-suction, split-case, multistage and self-priming. Up to 5,000 m³/h and 150 bar for water, wastewater and process.</p>
+        <p>End-suction, split-case, multistage and self-priming. For water, wastewater and process applications across industry.</p>
+        <div class="st-spec">MAX 5,000 m³/h · 150 bar</div>
     </div>
     <div>
         <div class="st-n">Submersible</div>
         <h3>Pumps</h3>
         <p>Wastewater, drainage, sludge and borehole submersibles. Built for municipal and industrial duties in demanding conditions.</p>
+        <div class="st-spec">STORMWATER · SEWAGE · SLUDGE</div>
     </div>
     <div>
-        <div class="st-n">Diesel</div>
+        <div class="st-n">Diesel &amp; Gas</div>
         <h3>Engines</h3>
-        <p>Industrial diesel and natural gas engines for pump drives, generators and heavy equipment. Tier 3/4 compliant. 10–2,000 kW.</p>
+        <p>Industrial engines for pump drives, generators and heavy equipment. Tier 3/4 compliant. Diesel, natural gas and biogas.</p>
+        <div class="st-spec">10 kW – 2,000 kW</div>
     </div>
 </div>
 
 <div class="show">
-    <div class="show-vis" style="background-image:url(https://images.pexels.com/photos/4487383/pexels-photo-4487383.jpeg?auto=compress&cs=tinysrgb&w=1200)">
+    <div class="show-vis" style="background-image:url(https://images.pexels.com/photos/37914183/pexels-photo-37914183.jpeg?auto=compress&cs=tinysrgb&w=1200)">
         <div class="so"></div>
-        <div class="sl">Hydraulic power units</div>
+        <div class="sl">Port Melbourne container terminal</div>
     </div>
     <div class="show-txt">
-        <h2>Hydraulic systems</h2>
-        <p>Gear, piston, vane and axial piston pumps. Motors, directional and pressure control valves, cylinders, and complete power units for mobile and industrial applications.</p>
+        <div class="st-cat">Hydraulics</div>
+        <h2>Hydraulic power systems</h2>
+        <p>Gear, piston, vane and axial piston pumps. Motors, directional and pressure control valves, cylinders, and complete power units for mobile and industrial applications. Custom system design and build available.</p>
         <div class="tags"><span>Up to 450 bar</span><span>Mobile &amp; Industrial</span><span>Custom builds</span></div>
     </div>
 </div>
 
 <div class="show">
     <div class="show-txt">
-        <h2>Transmission &amp; Drives</h2>
-        <p>Gearboxes, couplings, belt drives and variable speed drives from leading manufacturers. Solutions for pumps, conveyors, crushers and industrial processing equipment.</p>
-        <div class="tags"><span>Helical</span><span>Planetary</span><span>VSD</span></div>
+        <div class="st-cat">Power Transmission</div>
+        <h2>Drives &amp; Gearboxes</h2>
+        <p>Helical and planetary gearboxes, flexible couplings, belt drives and variable speed drives. Solutions for pumps, conveyors, crushers and industrial processing equipment from leading global manufacturers.</p>
+        <div class="tags"><span>Helical</span><span>Planetary</span><span>VSD</span><span>Couplings</span></div>
     </div>
-    <div class="show-vis">
+    <div class="show-vis" style="background-image:url(https://images.pexels.com/photos/6720522/pexels-photo-6720522.jpeg?auto=compress&cs=tinysrgb&w=1200)">
         <div class="so"></div>
-        <div class="sl">Gearbox assembly</div>
+        <div class="sl">Industrial equipment service</div>
     </div>
 </div>
 
@@ -195,12 +201,12 @@
     <div>
         <div class="in-n">02</div>
         <h4>Mining &amp; Resources</h4>
-        <p>Heavy-duty pumps, engines and hydraulic systems for surface and underground mining operations.</p>
+        <p>Heavy-duty pumps, engines and hydraulic systems for surface and underground mining operations nationwide.</p>
     </div>
     <div>
         <div class="in-n">03</div>
         <h4>Industrial Processing</h4>
-        <p>Process pumps, drives and power systems for manufacturing, food, chemical and refinery industries.</p>
+        <p>Process pumps, drives and power systems for manufacturing, food processing, chemical and refinery industries.</p>
     </div>
 </div>
 
@@ -208,7 +214,7 @@
     <div class="w">
         <div>
             <h2>Need equipment?</h2>
-            <p>Contact our supply team for a quote.</p>
+            <p>Talk to our supply team about your requirements.</p>
         </div>
         <div class="r">
             <div><div class="l">Phone</div><div class="v">07 4517 1087</div></div>
