@@ -28,25 +28,23 @@
         .hd-r a:hover{color:#121212}
         .hd-r .p{color:#fff;background:#c0392b;padding:8px 20px;border-radius:30px;font-weight:600;font-size:13px}
 
-        .flash{display:grid;grid-template-columns:1fr 1.1fr;min-height:80vh;border-bottom:2px solid #121212}
-        .flash-l{display:flex;flex-direction:column;justify-content:center;padding:60px 48px 60px 0}
-        .flash-t{font-size:clamp(42px,5vw,72px);font-weight:800;line-height:.95;letter-spacing:-2.5px;margin-bottom:14px}
-        .flash-t .r{color:#c0392b}
-        .flash-s{font-size:13px;color:#888;max-width:380px;line-height:1.7;margin-bottom:24px}
-        .flash-b{display:flex;gap:8px;flex-wrap:wrap}
+        .hero{background:#121212;color:#fff;padding:80px 0 60px;border-bottom:2px solid #121212}
+        .hero .w{max-width:900px}
+        .hero-t{font-size:clamp(42px,5vw,68px);font-weight:800;line-height:.95;letter-spacing:-2.5px;margin-bottom:18px}
+        .hero-t .r{color:#c0392b}
+        .hero-s{font-size:14px;color:#88847c;line-height:1.7;margin-bottom:24px;max-width:520px}
+        .hero-b{display:flex;gap:8px;flex-wrap:wrap}
         .btn{display:inline-flex;align-items:center;gap:6px;padding:12px 24px;border-radius:30px;font-weight:600;font-size:12px;text-decoration:none;border:none;cursor:pointer;transition:.2s;font-family:'Sora',sans-serif}
         .btn-p{background:#c0392b;color:#fff}
         .btn-p:hover{background:#a03020}
-        .btn-o{background:transparent;color:#121212;border:2px solid #121212}
-        .btn-o:hover{background:#121212;color:#fff}
-        .flash-r{background:#f5f5f0;display:flex;align-items:center;justify-content:center;padding:40px;position:relative;overflow:hidden}
-        .flash-r .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;width:100%;max-width:420px}
-        .flash-r .gbox{background:#fff;border-radius:8px;padding:24px;box-shadow:0 1px 4px rgba(0,0,0,.04);transition:.2s;cursor:default}
-        .flash-r .gbox:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);transform:translateY(-2px)}
-        .flash-r .gbox .gb-i{width:32px;height:32px;background:#121212;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;margin-bottom:12px}
-        .flash-r .gbox .gb-n{font-size:15px;font-weight:700;color:#121212;line-height:1.2}
-        .flash-r .gbox .gb-l{font-size:11px;color:#999;margin-top:3px}
-        .flash-r .gbox .gb-m{font-family:'IBM Plex Mono',monospace;font-size:10px;color:#ddd;margin-top:8px;letter-spacing:-.2px}
+        .btn-o{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.2)}
+        .btn-o:hover{border-color:#fff}
+        .hero-c{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:40px;border-top:1px solid rgba(255,255,255,.06);padding-top:32px}
+        .hero-c .hc{display:flex;align-items:center;gap:12px}
+        .hero-c .hc .hc-i{width:28px;height:28px;background:rgba(255,255,255,.06);border-radius:6px;display:flex;align-items:center;justify-content:center;color:#c0392b;font-size:12px;flex-shrink:0}
+        .hero-c .hc .hc-n{font-size:11px;font-weight:600;color:#fff;line-height:1.2}
+        .hero-c .hc .hc-l{font-size:9px;color:#666;letter-spacing:.3px}
+        .hero-c .hc .hc-m{font-family:'IBM Plex Mono',monospace;font-size:9px;color:#444;letter-spacing:-.2px;margin-top:2px}
 
         .strip{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:2px solid #121212}
         .strip>div{padding:56px 40px;border-right:1px solid #eee;transition:.2s}
@@ -88,9 +86,8 @@
         .ft .w{display:flex;justify-content:space-between;align-items:center;font-size:10px;color:#999}
 
         @media(max-width:900px){
-            .flash{grid-template-columns:1fr;min-height:auto}
-            .flash-l{padding:40px 0}
-            .flash-r{padding:32px;min-height:200px}
+            .hero-c{grid-template-columns:1fr 1fr;gap:12px}
+            .hero-c .hc{padding:8px 0}
             .show{grid-template-columns:1fr}
             .strip{grid-template-columns:1fr}
             .strip>div{border:0;border-bottom:1px solid #eee}
@@ -103,7 +100,7 @@
         @media(max-width:600px){
             .hd-r a{display:none}
             .hd-r .p{display:inline-flex}
-            .flash-r .grid{grid-template-columns:1fr}
+            .hero-c{grid-template-columns:1fr}
             .flash-t{font-size:32px}
         }
     </style>
@@ -126,21 +123,19 @@
     </div>
 </div>
 
-<div class="flash">
-    <div class="flash-l">
-        <div class="flash-t">Pumps.<br>Engines.<br><span class="r">Hydraulics.</span></div>
-        <div class="flash-s">Distributing industrial pumps, engines and hydraulic transmission equipment to the wastewater treatment, mining and industrial sectors across Australia.</div>
-        <div class="flash-b">
+<div class="hero">
+    <div class="w">
+        <div class="hero-t">Pumps. Engines.<br><span class="r">Hydraulics.</span></div>
+        <div class="hero-s">Distributing industrial pumps, engines and hydraulic transmission equipment to the wastewater treatment, mining and industrial sectors across Australia.</div>
+        <div class="hero-b">
             <a href="#" class="btn btn-p">Get a quote</a>
             <a href="#" class="btn btn-o">07 4517 1087</a>
         </div>
-    </div>
-    <div class="flash-r">
-        <div class="grid">
-            <div class="gbox"><div class="gb-i"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#fff" stroke-width="1.5"/><circle cx="8" cy="8" r="2.5" fill="#fff"/></svg></div><div class="gb-n">Centrifugal Pumps</div><div class="gb-l">Up to 5,000 m³/h · 150 bar</div><div class="gb-m">▸ end-suction · split-case · multistage</div></div>
-            <div class="gbox"><div class="gb-i"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="2" stroke="#fff" stroke-width="1.5"/><rect x="5" y="6" width="3" height="7" fill="#fff" opacity=".7"/><rect x="9" y="6" width="2" height="7" fill="#fff" opacity=".7"/></svg></div><div class="gb-n">Diesel &amp; Gas Engines</div><div class="gb-l">10 kW – 2 MW · Tier 3/4</div><div class="gb-m">▸ pump drives · generators · CHP</div></div>
-            <div class="gbox"><div class="gb-i"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="5" width="12" height="6" rx="2" stroke="#fff" stroke-width="1.5"/><circle cx="10" cy="8" r="1.5" fill="#fff"/><circle cx="5" cy="8" r="1.5" fill="#fff"/></svg></div><div class="gb-n">Hydraulic Systems</div><div class="gb-l">Up to 450 bar · Mobile &amp; Industrial</div><div class="gb-m">▸ pumps · motors · valves · cylinders</div></div>
-            <div class="gbox"><div class="gb-i"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12" stroke="#fff" stroke-width="1.5"/><circle cx="4" cy="8" r="2.5" fill="#fff"/><circle cx="12" cy="8" r="2.5" fill="#fff"/></svg></div><div class="gb-n">Transmission &amp; Drives</div><div class="gb-l">Gearboxes · VSD · Couplings</div><div class="gb-m">▸ helical · planetary · belt drives</div></div>
+        <div class="hero-c">
+            <div class="hc"><div class="hc-i"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="4" stroke="#c0392b" stroke-width="1.2"/><circle cx="6" cy="6" r="1.5" fill="#c0392b"/></svg></div><div><div class="hc-n">Centrifugal Pumps</div><div class="hc-l">5,000 m³/h · 150 bar</div><div class="hc-m">end-suction · split-case</div></div></div>
+            <div class="hc"><div class="hc-i"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="2" y="2.5" width="8" height="7" rx="1.5" stroke="#c0392b" stroke-width="1.2"/><rect x="4" y="5" width="2" height="4.5" fill="#c0392b" opacity=".5"/><rect x="7" y="5" width="1.5" height="4.5" fill="#c0392b" opacity=".5"/></svg></div><div><div class="hc-n">Diesel &amp; Gas Engines</div><div class="hc-l">10 kW – 2 MW</div><div class="hc-m">Tier 3/4 compliant</div></div></div>
+            <div class="hc"><div class="hc-i"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1.5" y="4" width="9" height="4" rx="1.5" stroke="#c0392b" stroke-width="1.2"/><circle cx="7.5" cy="6" r="1" fill="#c0392b"/><circle cx="4" cy="6" r="1" fill="#c0392b"/></svg></div><div><div class="hc-n">Hydraulic Systems</div><div class="hc-l">Up to 450 bar</div><div class="hc-m">mobile &amp; industrial</div></div></div>
+            <div class="hc"><div class="hc-i"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1.5 6h9" stroke="#c0392b" stroke-width="1.2"/><circle cx="3.5" cy="6" r="1.8" fill="#c0392b"/><circle cx="8.5" cy="6" r="1.8" fill="#c0392b"/></svg></div><div><div class="hc-n">Transmission &amp; Drives</div><div class="hc-l">Gearboxes · VSD</div><div class="hc-m">helical · planetary</div></div></div>
         </div>
     </div>
 </div>
