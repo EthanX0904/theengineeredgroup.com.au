@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 120" width="500" height="120">
+  <defs>
+    <clipPath id="hex">
+      <polygon points="30,0 60,0 90,30 90,70 60,100 30,100 0,70 0,30"/>
+    </clipPath>
+  </defs>
+  <!-- Hexagonal gear mark -->
+  <polygon points="30,2 58,2 88,30 88,70 58,98 30,98 2,70 2,30" fill="#121212"/>
+  <circle cx="45" cy="50" r="22" fill="none" stroke="#c0392b" stroke-width="2.5"/>
+  <circle cx="45" cy="50" r="8" fill="#c0392b"/>
+  <!-- Gear teeth dots -->
+  <circle cx="45" cy="18" r="2.5" fill="#c0392b"/>
+  <circle cx="45" cy="82" r="2.5" fill="#c0392b"/>
+  <circle cx="18" cy="46" r="2.5" fill="#c0392b"/>
+  <circle cx="72" cy="46" r="2.5" fill="#c0392b"/>
+  <circle cx="27" cy="28" r="2" fill="#c0392b"/>
+  <circle cx="63" cy="28" r="2" fill="#c0392b"/>
+  <circle cx="27" cy="68" r="2" fill="#c0392b"/>
+  <circle cx="63" cy="68" r="2" fill="#c0392b"/>
+
+  <!-- Text -->
+  <text x="108" y="48" font-family="'Sora', Arial, sans-serif" font-size="28" font-weight="800" fill="#121212" letter-spacing="-0.5">THE ENGINEERED</text>
+  <text x="108" y="76" font-family="'Sora', Arial, sans-serif" font-size="28" font-weight="800" fill="#121212" letter-spacing="-0.5">GROUP</text>
+  <text x="108" y="100" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#c0392b" letter-spacing="2">CONSULTING  ·  MANUFACTURING  ·  DESIGN</text>
+</svg>
