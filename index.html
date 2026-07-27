@@ -3,224 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE ENGINEERED GROUP — Industrial Equipment</title>
-    <meta name="description" content="Industrial pumps, engines and hydraulic transmission equipment. Distributing across Australia.">
+    <title>THE ENGINEERED GROUP</title>
+    <meta name="description" content="Industrial pumps, engines and hydraulic equipment distribution across Australia.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Inter',sans-serif;background:#f7f5f2;color:#1a1a18;line-height:1.5}
-        img{max-width:100%;display:block}
+        body{font-family:'Sora',sans-serif;background:#fff;color:#121212;line-height:1.5}
 
-        .g{max-width:1300px;margin:0 auto;padding:0 24px}
+        .w{max-width:1200px;margin:0 auto;padding:0 24px}
+        .fw{width:100%}
 
-        /* ——— TOP BAR ——— */
-        .bar{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid #e8e5e0;margin-bottom:40px}
-        .bar-mark{font-size:13px;font-weight:700;letter-spacing:-.3px;color:#1a1a18}
-        .bar-mark small{font-weight:400;color:#b8b0a5;font-size:10px;letter-spacing:.5px}
-        .bar-info{font-size:10px;color:#b8b0a5;letter-spacing:.5px;text-align:right;line-height:1.6}
-        .bar-info strong{color:#1a1a18;font-weight:600}
+        /* ——— TICKER ——— */
+        .ticker{background:#121212;color:#88847c;font-size:10px;padding:8px 0;overflow:hidden;white-space:nowrap;font-weight:400;letter-spacing:.3px}
+        .ticker-inner{display:inline-block;animation:tick 30s linear infinite}
+        .ticker-inner span{margin:0 24px;color:#c0392b;font-weight:600}
+        @keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-        /* ——— HERO ——— */
-        .hdr{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-bottom:80px;align-items:end}
-        .hdr-left{}
-        .hdr-tag{font-size:10px;font-weight:600;color:#c0392b;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px}
-        .hdr h1{font-size:clamp(32px,4vw,52px);font-weight:700;line-height:1.05;letter-spacing:-1.5px;margin-bottom:16px;color:#1a1a18}
-        .hdr p{color:#8a8478;font-size:14px;line-height:1.7;max-width:420px}
-        .hdr-right{text-align:right}
-        .hdr-specs{display:inline-grid;grid-template-columns:1fr 1fr;gap:8px;text-align:left}
-        .hdr-specs .s{background:#eeebe6;padding:10px 16px;border-radius:4px;font-size:11px;font-weight:600;color:#6a6458}
-        .hdr-specs .s em{display:block;color:#1a1a18;font-style:normal;font-size:13px}
+        /* ——— HEADER ——— */
+        .hd{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:2px solid #121212}
+        .hd-m{font-size:16px;font-weight:800;letter-spacing:-.3px;color:#121212}
+        .hd-m small{font-size:9px;font-weight:400;color:#999;letter-spacing:1px;margin-left:4px}
+        .hd-r{display:flex;gap:20px;align-items:center}
+        .hd-r a{color:#666;text-decoration:none;font-size:12px;font-weight:500;transition:.2s;padding:6px 12px;border-radius:4px}
+        .hd-r a:hover{color:#121212;background:#f5f5f0}
+        .hd-r .p{color:#fff;background:#c0392b;padding:8px 18px;border-radius:30px;font-weight:600}
 
-        /* ——— CATALOG GRID ——— */
-        .cat{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#e8e5e0;margin-bottom:80px}
-        .cat-i{background:#fff;padding:28px 24px 24px;display:flex;flex-direction:column}
-        .cat-i .icon{font-size:22px;color:#c0392b;margin-bottom:12px;height:28px}
-        .cat-i h3{font-size:14px;font-weight:700;margin-bottom:6px;letter-spacing:-.2px}
-        .cat-i p{font-size:12px;color:#8a8478;line-height:1.6;flex:1}
-        .cat-i .spec{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px;padding-top:14px;border-top:1px solid #f0ede8}
-        .cat-i .spec span{font-size:9px;background:#f5f2ed;padding:4px 8px;border-radius:3px;color:#6a6458;font-weight:500;letter-spacing:.3px}
+        /* ——— FLASH ——— */
+        .flash{display:grid;grid-template-columns:1fr 1fr;min-height:70vh;border-bottom:2px solid #121212}
+        .flash-l{display:flex;flex-direction:column;justify-content:center;padding:60px 40px}
+        .flash-t{font-size:clamp(42px,5vw,72px);font-weight:800;line-height:.95;letter-spacing:-2.5px;margin-bottom:16px}
+        .flash-t .r{color:#c0392b}
+        .flash-s{font-size:13px;color:#888;max-width:360px;line-height:1.7;margin-bottom:24px}
+        .flash-b{display:flex;gap:8px;flex-wrap:wrap}
+        .btn{display:inline-flex;align-items:center;gap:6px;padding:12px 24px;border-radius:30px;font-weight:600;font-size:12px;text-decoration:none;border:none;cursor:pointer;transition:.2s;font-family:'Sora',sans-serif}
+        .btn-p{background:#c0392b;color:#fff}
+        .btn-p:hover{background:#a03020}
+        .btn-o{background:transparent;color:#121212;border:2px solid #121212}
+        .btn-o:hover{background:#121212;color:#fff}
+        .flash-r{background:#f5f5f0;display:flex;align-items:center;justify-content:center;padding:40px;position:relative;overflow:hidden}
+        .flash-r .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;max-width:360px}
+        .flash-r .gbox{padding:20px;border-bottom:2px solid #ddd}
+        .flash-r .gbox .gb-n{font-size:24px;font-weight:800;color:#121212;line-height:1}
+        .flash-r .gbox .gb-l{font-size:9px;color:#999;text-transform:uppercase;letter-spacing:1px;margin-top:4px}
 
-        /* ——— SPREAD ——— */
-        .spread{display:grid;grid-template-columns:1fr 1.2fr;gap:50px;margin-bottom:80px;align-items:center}
-        .spread h2{font-size:clamp(22px,2.5vw,32px);font-weight:700;letter-spacing:-.8px;line-height:1.15;margin-bottom:14px}
-        .spread p{color:#8a8478;font-size:13px;line-height:1.7;margin-bottom:12px}
-        .spread .tags{display:flex;flex-wrap:wrap;gap:6px}
-        .spread .tags span{font-size:10px;background:#eeebe6;padding:6px 12px;border-radius:4px;color:#6a6458;font-weight:500}
-        .spread-vis{background:#eeebe6;border-radius:6px;min-height:260px;display:flex;align-items:center;justify-content:center;color:#d5d0c8;font-size:36px;background-size:cover;background-position:center;position:relative;overflow:hidden}
-        .spread-vis .v-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.4),transparent 50%)}
-        .spread-vis .v-label{position:relative;z-index:1;align-self:flex-end;padding:16px;color:#fff;font-size:10px;letter-spacing:.5px;font-weight:500;width:100%}
+        /* ——— STRIP ——— */
+        .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+        .strip>div{padding:48px 32px;border-right:1px solid #eee}
+        .strip>div:last-child{border:0}
+        .strip .st-n{font-size:10px;color:#c0392b;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px}
+        .strip h3{font-size:17px;font-weight:700;margin-bottom:6px;letter-spacing:-.3px}
+        .strip p{font-size:13px;color:#888;line-height:1.6}
 
-        /* ——— INDUSTRIES / CLIENTS ——— */
-        .ind-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:80px}
-        .ind-card{background:#fff;border:1px solid #e8e5e0;border-radius:6px;padding:24px}
-        .ind-card .num{font-size:40px;font-weight:700;color:#f0ede8;line-height:1;margin-bottom:8px;letter-spacing:-2px}
-        .ind-card h4{font-size:14px;font-weight:600;margin-bottom:4px}
-        .ind-card p{font-size:12px;color:#8a8478;line-height:1.6}
+        /* ——— SHOWCASE ——— */
+        .show{display:grid;grid-template-columns:1fr 1fr;border-bottom:2px solid #121212}
+        .show-vis{min-height:300px;background-size:cover;background-position:center;position:relative}
+        .show-vis .so{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.5),transparent 50%)}
+        .show-vis .sl{position:relative;z-index:1;align-self:flex-end;padding:20px;color:#fff;font-size:11px;font-weight:500;letter-spacing:.5px;display:flex;align-items:flex-end;height:100%}
+        .show-txt{display:flex;flex-direction:column;justify-content:center;padding:48px 40px}
+        .show-txt h2{font-size:clamp(20px,2.5vw,28px);font-weight:700;letter-spacing:-.8px;margin-bottom:10px}
+        .show-txt p{color:#888;font-size:13px;line-height:1.7;margin-bottom:10px}
+        .show-txt .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+        .show-txt .tags span{font-size:10px;background:#f5f5f0;padding:5px 10px;border-radius:4px;color:#666;font-weight:500}
 
-        /* ——— CONTACT BAR ——— */
-        .cta{background:#1a1a18;color:#f7f5f2;padding:40px 0;margin-bottom:0}
-        .cta .g{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-        .cta h2{font-size:clamp(20px,2vw,28px);font-weight:700;letter-spacing:-.5px;margin-bottom:6px}
-        .cta p{color:#8a8478;font-size:13px}
-        .cta-details{display:flex;gap:24px;flex-wrap:wrap;justify-content:flex-end}
-        .cta-details div{}
-        .cta-details .l{font-size:9px;color:#6a6458;text-transform:uppercase;letter-spacing:.8px;margin-bottom:2px}
-        .cta-details .v{font-size:14px;font-weight:600;color:#f7f5f2}
+        /* ——— INDUSTRIES ——— */
+        .inds{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:2px solid #121212}
+        .inds>div{padding:40px 32px;border-right:1px solid #eee}
+        .inds>div:last-child{border:0}
+        .inds .in-n{font-size:40px;font-weight:800;color:#f0f0e8;line-height:1;margin-bottom:8px;letter-spacing:-2px}
+        .inds h4{font-size:14px;font-weight:600;margin-bottom:4px}
+        .inds p{font-size:12px;color:#888;line-height:1.6}
 
-        /* ——— FOOTER ——— */
-        .ft{padding:24px 0;border-top:1px solid #e8e5e0;margin-top:0}
-        .ft .g{display:flex;justify-content:space-between;align-items:center;font-size:10px;color:#b8b0a5}
+        /* ——— CTA STRIP ——— */
+        .cta-s{background:#121212;color:#fff;padding:48px 0}
+        .cta-s .w{display:flex;justify-content:space-between;align-items:center;gap:20px}
+        .cta-s h2{font-size:clamp(18px,2vw,26px);font-weight:700;letter-spacing:-.5px}
+        .cta-s p{color:#88847c;font-size:13px}
+        .cta-s .r{display:flex;gap:24px}
+        .cta-s .r div .l{font-size:9px;color:#666;text-transform:uppercase;letter-spacing:.8px;margin-bottom:2px}
+        .cta-s .r div .v{font-size:14px;font-weight:600;color:#fff}
+
+        /* ——— FOOT ——— */
+        .ft{padding:20px 0;border-top:2px solid #121212}
+        .ft .w{display:flex;justify-content:space-between;align-items:center;font-size:10px;color:#999}
 
         @media(max-width:900px){
-            .hdr{grid-template-columns:1fr;gap:30px;margin-bottom:50px}
-            .cat{grid-template-columns:1fr 1fr}
-            .spread{grid-template-columns:1fr}
-            .ind-grid{grid-template-columns:1fr 1fr}
-            .cta .g{grid-template-columns:1fr;gap:20px}
-            .cta-details{justify-content:flex-start}
-            .hdr-right{text-align:left}
+            .flash{grid-template-columns:1fr;min-height:auto}
+            .flash-l{padding:40px 24px}
+            .show{grid-template-columns:1fr}
+            .strip{grid-template-columns:1fr}
+            .strip>div{border:0;border-bottom:1px solid #eee}
+            .inds{grid-template-columns:1fr}
+            .inds>div{border:0;border-bottom:1px solid #eee}
+            .cta-s .w{flex-direction:column;text-align:center}
+            .cta-s .r{justify-content:center}
         }
         @media(max-width:600px){
-            .cat{grid-template-columns:1fr}
-            .ind-grid{grid-template-columns:1fr}
-            .hdr-specs{grid-template-columns:1fr}
-            .bar-info{display:none}
-            .ft .g{flex-direction:column;gap:8px;text-align:center}
+            .hd-r a{display:none}
+            .hd-r .p{display:inline-flex}
+            .flash-r .grid{grid-template-columns:1fr}
         }
     </style>
 </head>
 <body>
 
-<div class="g">
-    <!-- TOP BAR -->
-    <div class="bar">
-        <div class="bar-mark">THE ENGINEERED GROUP <small>PTY LTD</small></div>
-        <div class="bar-info">
-            <strong>07 4517 1087</strong><br>
-            info@theengineeredgroup.com.au
+<div class="ticker">
+    <div class="ticker-inner">
+        <span>●</span> Industrial Pumps — Centrifugal · Submersible · Diaphragm <span>●</span> Diesel &amp; Gas Engines — 10 kW to 2 MW+ <span>●</span> Hydraulic Systems — Pumps · Motors · Valves · Cylinders <span>●</span> Filtration &amp; Cooling — Oil · Fuel · Coolant <span>●</span> Transmission Drives — Gearboxes · VSD · Couplings
+        <span>●</span> Industrial Pumps — Centrifugal · Submersible · Diaphragm <span>●</span> Diesel &amp; Gas Engines — 10 kW to 2 MW+ <span>●</span> Hydraulic Systems — Pumps · Motors · Valves · Cylinders <span>●</span> Filtration &amp; Cooling — Oil · Fuel · Coolant <span>●</span> Transmission Drives — Gearboxes · VSD · Couplings
+    </div>
+</div>
+
+<div class="hd w">
+    <div class="hd-m">THE ENGINEERED GROUP <small>PTY LTD</small></div>
+    <div class="hd-r">
+        <a href="#">Products</a>
+        <a href="#">Applications</a>
+        <span class="p">07 4517 1087</span>
+    </div>
+</div>
+
+<div class="flash">
+    <div class="flash-l">
+        <div class="flash-t">Pumps.<br>Engines.<br><span class="r">Hydraulics.</span></div>
+        <div class="flash-s">Distributing industrial pumps, engines and hydraulic transmission equipment to the wastewater treatment, mining and industrial sectors across Australia.</div>
+        <div class="flash-b">
+            <a href="#" class="btn btn-p">Get a quote</a>
+            <a href="#" class="btn btn-o">07 4517 1087</a>
         </div>
     </div>
-
-    <!-- HERO -->
-    <div class="hdr">
-        <div class="hdr-left">
-            <div class="hdr-tag">Industrial Equipment · Australia</div>
-            <h1>Pumps. Engines.<br>Hydraulics.</h1>
-            <p>Distributing industrial pumps, diesel and gas engines, and hydraulic transmission systems across Australia.</p>
-        </div>
-        <div class="hdr-right">
-            <div class="hdr-specs">
-                <div class="s"><em>Industrial Pumps</em>Centrifugal · Submersible · Diaphragm</div>
-                <div class="s"><em>Diesel &amp; Gas Engines</em>10 kW – 2 MW+</div>
-                <div class="s"><em>Hydraulic Systems</em>Pumps · Motors · Valves · Cylinders</div>
-                <div class="s"><em>Serving</em>Wastewater · Mining · Industry</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- PRODUCT CATALOG -->
-    <div class="cat">
-        <div class="cat-i">
-            <div class="icon"><i class="fas fa-water"></i></div>
-            <h3>Centrifugal Pumps</h3>
-            <p>End-suction, split-case, multistage and self-priming pumps for water, wastewater and process applications.</p>
-            <div class="spec"><span>Up to 5,000 m³/h</span><span>Up to 150 bar</span></div>
-        </div>
-        <div class="cat-i">
-            <div class="icon"><i class="fas fa-circle"></i></div>
-            <h3>Submersible Pumps</h3>
-            <p>Wastewater, drainage, sludge and borehole submersible pumps for municipal and industrial duties.</p>
-            <div class="spec"><span>Stormwater</span><span>Sewage</span><span>Mining</span></div>
-        </div>
-        <div class="cat-i">
-            <div class="icon"><i class="fas fa-oil-well"></i></div>
-            <h3>Diesel Engines</h3>
-            <p>Industrial diesel engines for pump drives, generators and heavy equipment. Tier 3 / Tier 4 compliant.</p>
-            <div class="spec"><span>10 – 2,000 kW</span><span>Water-cooled</span></div>
-        </div>
-        <div class="cat-i">
-            <div class="icon"><i class="fas fa-fire"></i></div>
-            <h3>Gas Engines</h3>
-            <p>Natural gas and biogas engines for CHP, gen-sets and gas compression in remote and industrial settings.</p>
-            <div class="spec"><span>Biogas</span><span>Landfill Gas</span><span>CNG</span></div>
-        </div>
-        <div class="cat-i">
-            <div class="icon"><i class="fas fa-cogs"></i></div>
-            <h3>Hydraulic Pumps</h3>
-            <p>Gear, piston, vane and axial piston pumps for mobile and industrial hydraulic systems.</p>
-            <div class="spec"><span>Up to 450 bar</span><span>Variable</span><span>Fixed</span></div>
-        </div>
-        <div class="cat-i">
-            <div class="icon"><i class="fas fa-wrench"></i></div>
-            <h3>Hydraulic Motors &amp; Valves</h3>
-            <p>Orbital, piston, gear motors and directional, pressure, flow control valves for complete system integration.</p>
-            <div class="spec"><span>Mobile</span><span>Industrial</span><span>Marine</span></div>
-        </div>
-        <div class="cat-i">
-            <div class="icon"><i class="fas fa-fan"></i></div>
-            <h3>Transmission Drives</h3>
-            <p>Gearboxes, couplings, belt drives and variable speed drives for precise power transmission.</p>
-            <div class="spec"><span>Helical</span><span>Planetary</span><span>VSD</span></div>
-        </div>
-        <div class="cat-i">
-            <div class="icon"><i class="fas fa-filter"></i></div>
-            <h3>Filtration &amp; Cooling</h3>
-            <p>Industrial filtration, heat exchangers and cooling systems for engine, hydraulic and process applications.</p>
-            <div class="spec"><span>Oil</span><span>Fuel</span><span>Coolant</span></div>
-        </div>
-    </div>
-
-    <!-- SPREAD: About -->
-    <div class="spread">
-        <div>
-            <h2>Supply. Support. Deliver.</h2>
-            <p>THE ENGINEERED GROUP PTY LTD partners with leading global manufacturers to bring industrial pumps, engines, and hydraulic equipment to Australian operations.</p>
-            <p>We focus on wastewater treatment, mining, and industrial processing — supplying components that keep critical infrastructure running.</p>
-            <div class="tags">
-                <span>Wastewater</span>
-                <span>Mining</span>
-                <span>Industrial Processing</span>
-                <span>Water Treatment</span>
-                <span>Oil &amp; Gas</span>
-            </div>
-        </div>
-        <div class="spread-vis" style="background-image:url(https://images.pexels.com/photos/4487383/pexels-photo-4487383.jpeg?auto=compress&cs=tinysrgb&w=1200)">
-            <div class="v-overlay"></div>
-            <div class="v-label">Australian industrial supply</div>
-        </div>
-    </div>
-
-    <!-- INDUSTRIES -->
-    <div class="ind-grid">
-        <div class="ind-card">
-            <div class="num">01</div>
-            <h4>Wastewater Treatment</h4>
-            <p>Pumping, aeration and filtration solutions for municipal and industrial water treatment facilities.</p>
-        </div>
-        <div class="ind-card">
-            <div class="num">02</div>
-            <h4>Mining &amp; Resources</h4>
-            <p>Heavy-duty pumps, engines and hydraulics for Australian mining operations — surface and underground.</p>
-        </div>
-        <div class="ind-card">
-            <div class="num">03</div>
-            <h4>Industrial Processing</h4>
-            <p>Process pumps, drives and power systems for manufacturing, food processing, chemical and refineries.</p>
+    <div class="flash-r">
+        <div class="grid">
+            <div class="gbox"><div class="gb-n">Industrial</div><div class="gb-l">Pumps</div></div>
+            <div class="gbox"><div class="gb-n">Diesel &amp; Gas</div><div class="gb-l">Engines</div></div>
+            <div class="gbox"><div class="gb-n">Hydraulic</div><div class="gb-l">Transmission</div></div>
+            <div class="gbox"><div class="gb-n">Filtration</div><div class="gb-l">&amp; Cooling</div></div>
         </div>
     </div>
 </div>
 
-<!-- CONTACT BAR (full width) -->
-<div class="cta">
-    <div class="g">
+<div class="strip">
+    <div>
+        <div class="st-n">Centrifugal</div>
+        <h3>Pumps</h3>
+        <p>End-suction, split-case, multistage and self-priming. Up to 5,000 m³/h and 150 bar for water, wastewater and process.</p>
+    </div>
+    <div>
+        <div class="st-n">Submersible</div>
+        <h3>Pumps</h3>
+        <p>Wastewater, drainage, sludge and borehole submersibles. Built for municipal and industrial duties in demanding conditions.</p>
+    </div>
+    <div>
+        <div class="st-n">Diesel</div>
+        <h3>Engines</h3>
+        <p>Industrial diesel and natural gas engines for pump drives, generators and heavy equipment. Tier 3/4 compliant. 10–2,000 kW.</p>
+    </div>
+</div>
+
+<div class="show">
+    <div class="show-vis" style="background-image:url(https://images.pexels.com/photos/4487383/pexels-photo-4487383.jpeg?auto=compress&cs=tinysrgb&w=1200)">
+        <div class="so"></div>
+        <div class="sl">Hydraulic power units</div>
+    </div>
+    <div class="show-txt">
+        <h2>Hydraulic systems</h2>
+        <p>Gear, piston, vane and axial piston pumps. Motors, directional and pressure control valves, cylinders, and complete power units for mobile and industrial applications.</p>
+        <div class="tags"><span>Up to 450 bar</span><span>Mobile &amp; Industrial</span><span>Custom builds</span></div>
+    </div>
+</div>
+
+<div class="show">
+    <div class="show-txt">
+        <h2>Transmission &amp; Drives</h2>
+        <p>Gearboxes, couplings, belt drives and variable speed drives from leading manufacturers. Solutions for pumps, conveyors, crushers and industrial processing equipment.</p>
+        <div class="tags"><span>Helical</span><span>Planetary</span><span>VSD</span></div>
+    </div>
+    <div class="show-vis">
+        <div class="so"></div>
+        <div class="sl">Gearbox assembly</div>
+    </div>
+</div>
+
+<div class="inds">
+    <div>
+        <div class="in-n">01</div>
+        <h4>Wastewater Treatment</h4>
+        <p>Pumping, aeration and filtration solutions for municipal and industrial water treatment plants across Australia.</p>
+    </div>
+    <div>
+        <div class="in-n">02</div>
+        <h4>Mining &amp; Resources</h4>
+        <p>Heavy-duty pumps, engines and hydraulic systems for surface and underground mining operations.</p>
+    </div>
+    <div>
+        <div class="in-n">03</div>
+        <h4>Industrial Processing</h4>
+        <p>Process pumps, drives and power systems for manufacturing, food, chemical and refinery industries.</p>
+    </div>
+</div>
+
+<div class="cta-s">
+    <div class="w">
         <div>
             <h2>Need equipment?</h2>
-            <p>Get in touch with our supply team.</p>
+            <p>Contact our supply team for a quote.</p>
         </div>
-        <div class="cta-details">
+        <div class="r">
             <div><div class="l">Phone</div><div class="v">07 4517 1087</div></div>
             <div><div class="l">Email</div><div class="v">info@theengineeredgroup.com.au</div></div>
             <div><div class="l">Hours</div><div class="v">Mon – Fri · 8AM – 5PM</div></div>
@@ -229,12 +219,11 @@
 </div>
 
 <div class="ft">
-    <div class="g">
+    <div class="w">
         <span>&copy; 2026 THE ENGINEERED GROUP PTY LTD</span>
-        <span>Industrial Pumps · Engines · Hydraulics</span>
+        <span>info@theengineeredgroup.com.au</span>
     </div>
 </div>
 
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
