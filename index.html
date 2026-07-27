@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE ENGINEERED GROUP — Industrial Pump, Engine &amp; Hydraulic Distribution</title>
+    <meta name="description" content="THE ENGINEERED GROUP PTY LTD distributes industrial pumps, engines and hydraulic transmission equipment. Serving wastewater treatment, mining and industrial sectors across Australia.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <style>
+        :root { --bg: #0c0c0c; --bg2: #141414; --bg3: #1c1c1c; --fg: #f0ede8; --fg2: #88847c; --accent: #e8850c; --accent2: #b86a00; --steel: #6b7b8d; --border: #222; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Space Grotesk', sans-serif; background: var(--bg); color: var(--fg); line-height: 1.6; }
+
+        .w { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
+        .wf { width: 100%; }
+
+        /* ===== SIDE NAV ===== */
+        .side-nav { position: fixed; right: 28px; top: 50%; transform: translateY(-50%); z-index: 100; display: flex; flex-direction: column; gap: 6px; }
+        .side-nav a { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--fg2); font-size: 11px; font-weight: 500; letter-spacing: .5px; text-transform: uppercase; transition: .3s; padding: 4px 0; }
+        .side-nav a .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--fg2); transition: .3s; }
+        .side-nav a:hover, .side-nav a.active { color: var(--fg); }
+        .side-nav a:hover .dot, .side-nav a.active .dot { background: var(--accent); width: 8px; height: 8px; }
+        .side-nav a .label { display: none; }
+        .side-nav a:hover .label { display: inline; }
+
+        /* ===== HERO ===== */
+        .hero { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; background: var(--bg); }
+        .hero::before { content: ''; position: absolute; top: -30%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(232,133,12,.04), transparent 70%); pointer-events: none; }
+        .hero .w { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 1; }
+        .hero-tag { font-size: 11px; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 20px; border-left: 3px solid var(--accent); padding-left: 14px; }
+        .hero h1 { font-size: clamp(36px, 5vw, 60px); font-weight: 700; line-height: 1.05; letter-spacing: -1px; margin-bottom: 16px; }
+        .hero h1 .hl { color: var(--accent); }
+        .hero p { color: var(--fg2); font-size: 15px; max-width: 480px; margin-bottom: 32px; line-height: 1.7; }
+        .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 4px; font-weight: 600; font-size: 12px; text-decoration: none; cursor: pointer; border: none; transition: .25s; letter-spacing: .5px; text-transform: uppercase; font-family: 'Space Grotesk', sans-serif; }
+        .btn-prime { background: var(--accent); color: var(--bg); }
+        .btn-prime:hover { background: var(--accent2); }
+        .btn-out { background: transparent; color: var(--fg); border: 1.5px solid var(--border); }
+        .btn-out:hover { border-color: var(--accent); color: var(--accent); }
+        .hero-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border-radius: 4px; overflow: hidden; }
+        .hero-spec { background: var(--bg2); padding: 20px 24px; }
+        .hero-spec strong { display: block; font-size: 18px; font-weight: 700; color: var(--accent); }
+        .hero-spec span { font-size: 11px; color: var(--fg2); letter-spacing: .5px; text-transform: uppercase; }
+
+        /* ===== SECTION BASE ===== */
+        .sec { padding: 100px 0; }
+        .sec-label { font-size: 10px; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 8px; border-left: 3px solid var(--accent); padding-left: 14px; }
+        .sec-h { font-size: clamp(28px, 3.5vw, 42px); font-weight: 700; line-height: 1.1; letter-spacing: -.5px; margin-bottom: 16px; }
+        .sec-desc { color: var(--fg2); font-size: 14px; max-width: 520px; line-height: 1.7; }
+
+        /* = straps (diagonal separators) = */
+        .strap { position: relative; }
+        .strap::after { content: ''; position: absolute; bottom: -40px; left: 0; right: 0; height: 80px; background: inherit; clip-path: polygon(0 0, 100% 0, 100% 30%, 0 100%); z-index: 2; }
+
+        /* ===== PRODUCTS / SERVICES ===== */
+        .sec-dark { background: var(--bg2); }
+        .prod-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); margin-top: 40px; }
+        .prod-card { background: var(--bg); padding: 36px 28px; transition: .3s; border-bottom: 3px solid transparent; }
+        .prod-card:hover { border-bottom-color: var(--accent); background: var(--bg3); }
+        .prod-card .pc-icon { width: 44px; height: 44px; border: 1.5px solid var(--border); border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; color: var(--accent); font-size: 18px; }
+        .prod-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+        .prod-card p { font-size: 13px; color: var(--fg2); line-height: 1.7; }
+
+        /* ===== APPLICATIONS ===== */
+        .app-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
+        .app-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 4px; padding: 28px 24px; transition: .25s; }
+        .app-card:hover { border-color: var(--accent); }
+        .app-card .ac-num { font-size: 36px; font-weight: 700; color: rgba(232,133,12,.15); line-height: 1; margin-bottom: 10px; }
+        .app-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+        .app-card p { font-size: 13px; color: var(--fg2); line-height: 1.6; }
+
+        /* ===== ABOUT ===== */
+        .ab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .ab-text p { color: var(--fg2); font-size: 14px; margin-bottom: 14px; line-height: 1.8; }
+        .ab-list { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 20px; }
+        .ab-item { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--fg); padding: 10px 14px; background: var(--bg2); border: 1px solid var(--border); border-radius: 4px; }
+        .ab-item i { color: var(--accent); font-size: 12px; }
+        .ab-visual { background: var(--bg2); border: 1px solid var(--border); border-radius: 4px; min-height: 320px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+        .ab-visual .abv-content { text-align: center; color: rgba(255,255,255,.05); }
+        .ab-visual .abv-content i { font-size: 56px; }
+
+        /* ===== BRANDS / PARTNERS ===== */
+        .brand-bar { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 36px; }
+        .brand-item { padding: 16px 28px; background: var(--bg2); border: 1px solid var(--border); border-radius: 4px; font-size: 13px; color: var(--fg2); font-weight: 500; letter-spacing: 1px; text-transform: uppercase; transition: .25s; }
+        .brand-item:hover { border-color: var(--accent); color: var(--fg); }
+
+        /* ===== CONTACT ===== */
+        .ct-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; margin-top: 36px; }
+        .ct-cards { display: flex; flex-direction: column; gap: 10px; }
+        .ct-card { display: flex; align-items: center; gap: 14px; padding: 16px; background: var(--bg2); border: 1px solid var(--border); border-radius: 4px; }
+        .ct-card i { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: var(--bg); border-radius: 4px; color: var(--accent); font-size: 13px; }
+        .ct-lbl { font-size: 10px; color: var(--fg2); text-transform: uppercase; letter-spacing: .5px; }
+        .ct-val { font-size: 14px; font-weight: 500; color: var(--fg); }
+        .ct-form { background: var(--bg2); border: 1px solid var(--border); border-radius: 4px; padding: 28px; }
+        .ct-form h3 { font-size: 16px; font-weight: 600; margin-bottom: 16px; }
+        .fg { margin-bottom: 12px; }
+        .fr { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .fg input, .fg textarea, .fg select { width: 100%; padding: 12px 14px; background: var(--bg); border: 1px solid var(--border); border-radius: 4px; font-family: 'Space Grotesk', sans-serif; font-size: 13px; color: var(--fg); transition: .2s; }
+        .fg input:focus, .fg textarea:focus { outline: none; border-color: var(--accent); }
+        .fg textarea { min-height: 90px; resize: vertical; }
+        .fg select option { background: var(--bg); }
+
+        /* ===== FOOTER ===== */
+        footer { background: var(--bg); border-top: 1px solid var(--border); padding: 48px 0 24px; }
+        footer .w { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
+        footer h3 { font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--fg2); margin-bottom: 12px; }
+        footer p { font-size: 12px; color: var(--fg2); line-height: 1.7; }
+        footer a { color: var(--fg2); text-decoration: none; }
+        footer a:hover { color: var(--accent); }
+        footer ul { list-style: none; }
+        footer ul li { margin-bottom: 5px; }
+        footer ul li a { font-size: 12px; }
+        footer .bot { border-top: 1px solid var(--border); margin-top: 32px; padding-top: 18px; text-align: center; font-size: 11px; color: var(--fg2); }
+
+        @media (max-width: 900px) {
+            .hero .w { grid-template-columns: 1fr; gap: 40px; }
+            .ab-grid { grid-template-columns: 1fr; }
+            .prod-grid { grid-template-columns: 1fr 1fr; }
+            .app-grid { grid-template-columns: 1fr 1fr; }
+            .ct-grid { grid-template-columns: 1fr; }
+            .side-nav { display: none; }
+        }
+        @media (max-width: 600px) {
+            .prod-grid { grid-template-columns: 1fr; }
+            .app-grid { grid-template-columns: 1fr; }
+            .ab-list { grid-template-columns: 1fr; }
+            .hero-specs { grid-template-columns: 1fr; }
+            .fr { grid-template-columns: 1fr; }
+            footer .w { grid-template-columns: 1fr; }
+            .hero { min-height: auto; padding: 80px 0; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== SIDE NAV ===== -->
+<nav class="side-nav" id="sideNav">
+    <a href="#hero" class="active"><span class="dot"></span><span class="label">Home</span></a>
+    <a href="#about"><span class="dot"></span><span class="label">About</span></a>
+    <a href="#products"><span class="dot"></span><span class="label">Products</span></a>
+    <a href="#applications"><span class="dot"></span><span class="label">Applications</span></a>
+    <a href="#contact"><span class="dot"></span><span class="label">Contact</span></a>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="hero" class="hero">
+    <div class="w">
+        <div>
+            <div class="hero-tag">Industrial Distribution · Australia</div>
+            <h1>Pumps. Engines.<br><span class="hl">Hydraulics.</span></h1>
+            <p>THE ENGINEERED GROUP PTY LTD supplies industrial pumps, engines, and hydraulic transmission equipment to the wastewater treatment, mining, and industrial sectors across Australia.</p>
+            <div class="hero-actions">
+                <a href="#products" class="btn btn-prime">Our Products <i class="fas fa-arrow-right" style="font-size:10px"></i></a>
+                <a href="#contact" class="btn btn-out">Get a Quote</a>
+            </div>
+        </div>
+        <div class="hero-specs">
+            <div class="hero-spec"><strong>Industrial</strong><span>Pumps</span></div>
+            <div class="hero-spec"><strong>Diesel &amp; Gas</strong><span>Engines</span></div>
+            <div class="hero-spec"><strong>Hydraulic</strong><span>Transmission</span></div>
+            <div class="hero-spec"><strong>Wastewater</strong><span>Treatment</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="sec sec-dark">
+    <div class="w">
+        <div class="ab-grid">
+            <div>
+                <div class="sec-label">About</div>
+                <h2 class="sec-h">Engineered for<br>industry.</h2>
+                <div class="ab-text">
+                    <p>THE ENGINEERED GROUP PTY LTD is an Australian distributor of industrial pumps, engines, and hydraulic transmission equipment. We partner with leading global manufacturers to deliver reliable power and fluid handling solutions to the wastewater, mining, and industrial sectors.</p>
+                    <p>Our team brings decades of technical expertise, ensuring every component we supply meets the rigorous demands of Australian industrial operations.</p>
+                </div>
+                <div class="ab-list">
+                    <div class="ab-item"><i class="fas fa-check"></i> Australian owned</div>
+                    <div class="ab-item"><i class="fas fa-check"></i> Global supply network</div>
+                    <div class="ab-item"><i class="fas fa-check"></i> Technical expertise</div>
+                    <div class="ab-item"><i class="fas fa-check"></i> OEM partnerships</div>
+                </div>
+            </div>
+            <div class="ab-visual">
+                <div class="abv-content"><i class="fas fa-gear"></i></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PRODUCTS ===== -->
+<section id="products" class="sec">
+    <div class="w">
+        <div class="sec-label">Products</div>
+        <h2 class="sec-h">What we supply</h2>
+        <p class="sec-desc">Industrial-grade equipment from leading manufacturers, backed by technical support and reliable supply chains.</p>
+        <div class="prod-grid">
+            <div class="prod-card">
+                <div class="pc-icon"><i class="fas fa-water"></i></div>
+                <h3>Industrial Pumps</h3>
+                <p>Centrifugal, submersible, diaphragm and positive displacement pumps for wastewater, slurry, and process applications.</p>
+            </div>
+            <div class="prod-card">
+                <div class="pc-icon"><i class="fas fa-oil-well"></i></div>
+                <h3>Diesel &amp; Gas Engines</h3>
+                <p>Industrial diesel and natural gas engines for pump drives, generators, and heavy equipment — from 10 kW to 2 MW+.</p>
+            </div>
+            <div class="prod-card">
+                <div class="pc-icon"><i class="fas fa-cogs"></i></div>
+                <h3>Hydraulic Systems</h3>
+                <p>Hydraulic pumps, motors, valves, cylinders and power units for mobile and industrial applications.</p>
+            </div>
+            <div class="prod-card">
+                <div class="pc-icon"><i class="fas fa-fan"></i></div>
+                <h3>Transmission Drives</h3>
+                <p>Gearboxes, couplings, belt drives and variable speed drives for precise power transmission and control.</p>
+            </div>
+            <div class="prod-card">
+                <div class="pc-icon"><i class="fas fa-filter"></i></div>
+                <h3>Filtration &amp; Cooling</h3>
+                <p>Industrial filtration systems, heat exchangers, and cooling solutions for engine and hydraulic applications.</p>
+            </div>
+            <div class="prod-card">
+                <div class="pc-icon"><i class="fas fa-tools"></i></div>
+                <h3>Parts &amp; Service</h3>
+                <p>Genuine replacement parts, maintenance kits, and on-site service support across Australia.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== APPLICATIONS ===== -->
+<section id="applications" class="sec sec-dark">
+    <div class="w">
+        <div class="sec-label">Applications</div>
+        <h2 class="sec-h">Industries we serve</h2>
+        <p class="sec-desc">Our equipment powers critical operations across Australia's most demanding industries.</p>
+        <div class="app-grid">
+            <div class="app-card">
+                <div class="ac-num">01</div>
+                <h3>Wastewater Treatment</h3>
+                <p>Pumping, aeration, and filtration systems for municipal and industrial water treatment facilities.</p>
+            </div>
+            <div class="app-card">
+                <div class="ac-num">02</div>
+                <h3>Mining &amp; Resources</h3>
+                <p>Heavy-duty pumps, engines, and hydraulic systems for mining operations across Australia.</p>
+            </div>
+            <div class="app-card">
+                <div class="ac-num">03</div>
+                <h3>Industrial Processing</h3>
+                <p>Process pumps, drives, and power systems for manufacturing, food processing, and chemical plants.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="sec">
+    <div class="w">
+        <div class="sec-label">Contact</div>
+        <h2 class="sec-h">Get in touch</h2>
+        <p class="sec-desc">Discuss your industrial equipment requirements with our technical team.</p>
+        <div class="ct-grid">
+            <div class="ct-cards">
+                <div class="ct-card">
+                    <i class="fas fa-phone"></i>
+                    <div><div class="ct-lbl">Phone</div><div class="ct-val">—</div></div>
+                </div>
+                <div class="ct-card">
+                    <i class="fas fa-envelope"></i>
+                    <div><div class="ct-lbl">Email</div><div class="ct-val">info@theengineeredgroup.com.au</div></div>
+                </div>
+                <div class="ct-card">
+                    <i class="fas fa-clock"></i>
+                    <div><div class="ct-lbl">Hours</div><div class="ct-val">Mon – Fri · 8:00 AM – 5:00 PM</div></div>
+                </div>
+            </div>
+            <div class="ct-form">
+                <h3>Send an enquiry</h3>
+                <form>
+                    <div class="fr">
+                        <div class="fg"><input type="text" placeholder="Your name *" required></div>
+                        <div class="fg"><input type="email" placeholder="Email *" required></div>
+                    </div>
+                    <div class="fg"><input type="text" placeholder="Company name"></div>
+                    <div class="fg">
+                        <select><option>Select product</option><option>Industrial Pumps</option><option>Diesel &amp; Gas Engines</option><option>Hydraulic Systems</option><option>Transmission Drives</option><option>Filtration &amp; Cooling</option><option>Parts &amp; Service</option></select>
+                    </div>
+                    <div class="fg"><textarea placeholder="Tell us about your requirements... *" required></textarea></div>
+                    <button type="submit" class="btn btn-prime" style="width:100%;justify-content:center">Submit Enquiry <i class="fas fa-paper-plane" style="font-size:10px"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="w">
+        <div>
+            <h3>THE ENGINEERED GROUP PTY LTD</h3>
+            <p>Industrial pump, engine, and hydraulic transmission distributor serving wastewater treatment, mining, and industrial sectors across Australia.</p>
+        </div>
+        <div>
+            <h3>Products</h3>
+            <ul>
+                <li><a href="#products">Industrial Pumps</a></li>
+                <li><a href="#products">Diesel &amp; Gas Engines</a></li>
+                <li><a href="#products">Hydraulic Systems</a></li>
+                <li><a href="#products">Transmission Drives</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Contact</h3>
+            <ul>
+                <li><a href="#contact">Enquire Online</a></li>
+                <li><a href="#contact">info@theengineeredgroup.com.au</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="w">
+        <div class="bot">&copy; 2026 THE ENGINEERED GROUP PTY LTD. All rights reserved.</div>
+    </div>
+</footer>
+
+<script>
+// Side nav active tracking
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.side-nav a');
+window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+        const top = s.offsetTop - 200;
+        if (window.scrollY >= top) current = s.id;
+    });
+    navLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+});
+</script>
+</body>
+</html>
